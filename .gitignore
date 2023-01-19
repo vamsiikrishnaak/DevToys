@@ -334,3 +334,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/src/dev/impl/DevToys/LanguageManager.cs
+/src/dev/impl/DevToys/LanguageManager.cs
+/.gitignore
+/.gitignore

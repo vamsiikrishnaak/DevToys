@@ -1,11 +1,5 @@
 ﻿#nullable enable
 
-using System;
-using System.Collections.Generic;
-using System.Composition;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using DevToys.Api.Core;
 using DevToys.Api.Core.Settings;
 using DevToys.Api.Tools;
@@ -15,6 +9,13 @@ using DevToys.Shared.Core.Threading;
 using DevToys.UI.Controls;
 using DevToys.Views.Tools.RegEx;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.Composition;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -403,6 +404,43 @@ namespace DevToys.ViewModels.Tools.RegEx
             }
 
             return lines;
+        }
+
+        internal string SelectedOptionsList
+        {
+            get
+            {
+                var selectedOptions = new List<string>();
+                if (EcmaScript)
+                {
+                    selectedOptions.Add(Strings.EcmaScript);
+                }
+                if (CultureInvariant)
+                {
+                    selectedOptions.Add(Strings.CultureInvariant);
+                }
+                if (IgnoreCase)
+                {
+                    selectedOptions.Add(Strings.IgnoreCase);
+                }
+                if (IgnoreWhitespace)
+                {
+                    selectedOptions.Add(Strings.IgnoreWhitespace);
+                }
+                if (Singleline)
+                {
+                    selectedOptions.Add(Strings.Singleline);
+                }
+                if (Multiline)
+                {
+                    selectedOptions.Add(Strings.Multiline);
+                }
+                if (RightToLeft)
+                {
+                    selectedOptions.Add(Strings.RightToLeft);
+                }
+                return string.Join(", ", selectedOptions);
+            }
         }
     }
 
